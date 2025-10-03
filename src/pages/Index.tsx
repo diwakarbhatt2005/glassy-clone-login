@@ -23,8 +23,8 @@ const Index = () => {
 
         {/* Welcome Text */}
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-3xl font-bold text-foreground">Welcome Back!</h1>
-          <p className="text-muted-foreground">Sign in to access your personal AI guides</p>
+          <h1 className="mb-2 text-3xl font-bold tracking-wide text-foreground">Welcome Back!</h1>
+          <p className="text-sm text-muted-foreground">Sign in to access your personal AI guides</p>
         </div>
 
         {/* Sign In Form */}
