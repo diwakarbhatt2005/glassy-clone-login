@@ -31,7 +31,7 @@ const Index = () => {
         <form onSubmit={handleSignIn} className="space-y-6">
           {/* Email Input */}
           <div className="relative">
-            <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
+            <Mail className="icon-cyan absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
             <Input
               glass
               type="email"
@@ -45,7 +45,7 @@ const Index = () => {
 
           {/* Password Input */}
           <div className="relative">
-            <Lock className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
+            <Lock className="icon-cyan absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
             <Input
               glass
               type="password"
@@ -64,7 +64,7 @@ const Index = () => {
 
           {/* Forgot Password Link */}
           <div className="text-center">
-            <Button variant="link" type="button" className="text-primary hover:text-primary/80">
+            <Button variant="link" type="button" className="link-cyan hover:opacity-80">
               Forgot Password
             </Button>
           </div>

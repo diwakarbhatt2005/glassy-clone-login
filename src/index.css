@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 100% 6%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
     --card: 220 30% 12%;
@@ -17,32 +17,32 @@ All colors MUST be HSL.
     --popover: 220 30% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 186 100% 50%;
-    --primary-foreground: 210 100% 6%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 100% 30%;
+    --secondary: 195 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 25%;
     --muted-foreground: 200 20% 70%;
 
-    --accent: 186 100% 50%;
-    --accent-foreground: 210 100% 6%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 186 80% 40%;
+    --border: 180 100% 82%;
     --input: 220 50% 15%;
-    --ring: 186 100% 50%;
+    --ring: 195 100% 50%;
 
     --radius: 1rem;
     
-    --glass-background: 210 50% 15%;
-    --glass-border: 186 100% 50%;
-    --glow-primary: 186 100% 50%;
-    --cyan-bright: 186 100% 50%;
-    --blue-dark: 210 100% 15%;
+    --button-gradient-start: 195 100% 50%;
+    --button-gradient-end: 162 100% 50%;
+    --bg-gradient-start: 168 100% 50%;
+    --icon-color: 180 100% 82%;
+    --link-color: 195 100% 50%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -62,7 +62,7 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 210 100% 6%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
     --card: 220 30% 12%;
@@ -71,30 +71,30 @@ All colors MUST be HSL.
     --popover: 220 30% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 186 100% 50%;
-    --primary-foreground: 210 100% 6%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 100% 30%;
+    --secondary: 195 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 25%;
     --muted-foreground: 200 20% 70%;
 
-    --accent: 186 100% 50%;
-    --accent-foreground: 210 100% 6%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 186 80% 40%;
+    --border: 180 100% 82%;
     --input: 220 50% 15%;
-    --ring: 186 100% 50%;
+    --ring: 195 100% 50%;
     
-    --glass-background: 210 50% 15%;
-    --glass-border: 186 100% 50%;
-    --glow-primary: 186 100% 50%;
-    --cyan-bright: 186 100% 50%;
-    --blue-dark: 210 100% 15%;
+    --button-gradient-start: 195 100% 50%;
+    --button-gradient-end: 162 100% 50%;
+    --bg-gradient-start: 168 100% 50%;
+    --icon-color: 180 100% 82%;
+    --link-color: 195 100% 50%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -113,44 +113,47 @@ All colors MUST be HSL.
 
   body {
     @apply text-foreground;
-    background: radial-gradient(ellipse at left, hsl(186 100% 50% / 0.3) 0%, hsl(210 100% 15%) 40%, hsl(210 100% 6%) 70%),
-                radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, hsl(210 100% 8%) 0%, hsl(210 100% 4%) 100%);
-    background-size: 100% 100%, 600px 600px, 100% 100%;
-    background-position: center, top right, center;
-    background-repeat: no-repeat;
+    background: linear-gradient(150deg, hsl(var(--bg-gradient-start)) 0%, hsl(0 0% 0%) 100%);
     min-height: 100vh;
   }
 }
 
 @layer utilities {
   .glass-effect {
-    background: linear-gradient(135deg, hsl(var(--glass-background) / 0.15) 0%, hsl(var(--blue-dark) / 0.1) 100%);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--glass-border) / 0.2);
+    border: 1px solid hsl(var(--border) / 0.3);
   }
   
   .glass-input {
-    background: linear-gradient(135deg, hsl(var(--input) / 0.3) 0%, hsl(var(--blue-dark) / 0.4) 100%);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    border: 2px solid hsl(var(--cyan-bright) / 0.5);
+    border: 2px solid hsl(var(--border) / 0.6);
     transition: all 0.3s ease;
   }
   
   .glass-input:focus {
-    border-color: hsl(var(--cyan-bright));
-    box-shadow: 0 0 20px hsl(var(--cyan-bright) / 0.4), inset 0 0 10px hsl(var(--cyan-bright) / 0.1);
+    border-color: hsl(var(--border));
+    box-shadow: 0 0 20px hsl(var(--border) / 0.5);
   }
   
   .glow-button {
-    background: hsl(var(--cyan-bright));
-    box-shadow: 0 0 30px hsl(var(--cyan-bright) / 0.6);
+    background: linear-gradient(90deg, hsl(var(--button-gradient-start)), hsl(var(--button-gradient-end)));
+    box-shadow: 0 0 30px hsl(var(--button-gradient-start) / 0.6);
     transition: all 0.3s ease;
     font-weight: 600;
   }
   
   .glow-button:hover {
-    box-shadow: 0 0 40px hsl(var(--cyan-bright) / 0.8);
+    box-shadow: 0 0 40px hsl(var(--button-gradient-start) / 0.8);
     transform: translateY(-2px);
+  }
+  
+  .icon-cyan {
+    color: hsl(var(--icon-color));
+  }
+  
+  .link-cyan {
+    color: hsl(var(--link-color));
   }
 }
